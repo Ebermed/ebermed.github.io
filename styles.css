@@ -167,7 +167,9 @@ h1 em {
   font-weight: 850;
   letter-spacing: 0.08em;
   text-transform: uppercase;
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
 .button:hover {
@@ -201,6 +203,9 @@ h1 em {
 /* Cartel del hero */
 
 .hero-poster {
+  --poster-circle-size: min(390px, 76%);
+  --portrait-size: var(--poster-circle-size);
+  --poster-circle-y: 40%;
   position: relative;
   min-height: 480px;
   overflow: hidden;
@@ -211,7 +216,16 @@ h1 em {
 }
 
 .hero-poster::before {
-  display: none;
+  position: absolute;
+  top: var(--poster-circle-y);
+  left: 50%;
+  width: var(--poster-circle-size);
+  aspect-ratio: 1;
+  border-radius: 50%;
+  background: var(--cream);
+  content: "";
+  opacity: 0.8;
+  transform: translate(-50%, -50%);
 }
 
 .hero-poster::after {
@@ -242,27 +256,27 @@ h1 em {
 
 .poster-stamp {
   position: absolute;
-  top: 50%;
+  top: var(--poster-circle-y);
   left: 50%;
   z-index: 2;
   display: block;
-  width: min(88%, 460px);
-  height: auto;
+  width: var(--portrait-size);
+  aspect-ratio: 1;
   padding: 0;
-  overflow: visible;
+  overflow: hidden;
   border: 0;
-  border-radius: 0;
-  background: transparent;
-  transform: translate(-50%, -50%);
+  border-radius: 50%;
+  background: var(--cream);
+  transform: translate(-50%, -50%) rotate(-2deg);
 }
 
 .poster-stamp img {
   display: block;
   width: 100%;
-  height: auto;
-  border-radius: 0;
-  object-fit: contain;
-  object-position: center;
+  height: 100%;
+  border-radius: inherit;
+  object-fit: cover;
+  object-position: center 44%;
   filter: none;
 }
 
@@ -749,14 +763,13 @@ h1 em {
   }
 
   .hero-poster {
+    --poster-circle-size: min(78vw, 390px);
+    --portrait-size: min(58vw, 280px);
+    --poster-circle-y: 40%;
     width: 100%;
     max-width: 500px;
     min-height: 390px;
     margin: 0 auto;
-  }
-
-  .poster-stamp {
-    width: min(82%, 390px);
   }
 
   .proof-grid {
@@ -807,8 +820,9 @@ h1 em {
     align-items: flex-start;
   }
 
-  .poster-stamp {
-    width: min(90%, 340px);
+  .hero-poster {
+    --poster-circle-size: min(84vw, 350px);
+    --portrait-size: min(62vw, 260px);
   }
 
   .proof-grid {
