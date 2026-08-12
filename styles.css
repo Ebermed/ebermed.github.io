@@ -211,15 +211,7 @@ h1 em {
 }
 
 .hero-poster::before {
-  position: absolute;
-  top: 16%;
-  left: 16%;
-  width: 390px;
-  height: 390px;
-  border-radius: 50%;
-  background: var(--cream);
-  content: "";
-  opacity: 0.8;
+  display: none;
 }
 
 .hero-poster::after {
@@ -250,27 +242,27 @@ h1 em {
 
 .poster-stamp {
   position: absolute;
-  top: 38%;
+  top: 50%;
   left: 50%;
   z-index: 2;
   display: block;
-  width: clamp(190px, 28vw, 260px);
-  aspect-ratio: 1;
+  width: min(88%, 460px);
+  height: auto;
   padding: 0;
-  overflow: hidden;
+  overflow: visible;
   border: 0;
-  border-radius: 50%;
-  background: var(--cream);
-  transform: translate(-50%, -50%) rotate(-12deg);
+  border-radius: 0;
+  background: transparent;
+  transform: translate(-50%, -50%);
 }
 
 .poster-stamp img {
   display: block;
   width: 100%;
-  height: 100%;
-  border-radius: inherit;
-  object-fit: cover;
-  object-position: center 44%;
+  height: auto;
+  border-radius: 0;
+  object-fit: contain;
+  object-position: center;
   filter: none;
 }
 
@@ -764,7 +756,7 @@ h1 em {
   }
 
   .poster-stamp {
-    width: 220px;
+    width: min(82%, 390px);
   }
 
   .proof-grid {
@@ -816,7 +808,7 @@ h1 em {
   }
 
   .poster-stamp {
-    width: 190px;
+    width: min(90%, 340px);
   }
 
   .proof-grid {
