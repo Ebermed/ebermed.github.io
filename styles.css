@@ -863,3 +863,108 @@ h1 em {
     text-align: left;
   }
 }
+/* IMÁGENES DE PROYECTOS */
+
+.project-shape {
+  left: 45%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 0;
+}
+
+.project-shape::after {
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.project-art {
+  position: absolute;
+  z-index: 1;
+  display: block;
+  object-fit: contain;
+  pointer-events: none;
+  user-select: none;
+  filter: drop-shadow(0 18px 16px rgba(24, 21, 18, 0.22));
+}
+
+.project-number,
+.project-label {
+  z-index: 3;
+}
+
+/* PlayStation 1 */
+
+.project-art-ps1 {
+  left: 49%;
+  top: 51%;
+  width: 72%;
+  max-width: 520px;
+  transform: translate(-50%, -50%) rotate(-5deg);
+}
+
+/* Sonic */
+
+.project-art-sonic {
+  left: 49%;
+  bottom: -12%;
+  height: 116%;
+  transform: translateX(-50%);
+}
+
+/* Leon */
+
+.project-art-leon {
+  left: 50%;
+  bottom: -15%;
+  height: 120%;
+  transform: translateX(-50%);
+}
+
+/* TABLET Y CELULAR */
+
+@media (max-width: 800px) {
+  .project-shape {
+    left: 50%;
+  }
+
+  .project-art-ps1 {
+    left: 52%;
+    width: 78%;
+    max-width: 430px;
+  }
+
+  .project-art-sonic {
+    left: 52%;
+    height: 118%;
+  }
+
+  .project-art-leon {
+    left: 53%;
+    height: 122%;
+  }
+}
+
+@media (max-width: 520px) {
+  .project-shape {
+    width: 190px;
+    height: 190px;
+  }
+
+  .project-shape::after {
+    width: 64px;
+    height: 64px;
+  }
+
+  .project-art-ps1 {
+    width: 82%;
+  }
+
+  .project-art-sonic {
+    height: 112%;
+  }
+
+  .project-art-leon {
+    height: 116%;
+  }
+}
